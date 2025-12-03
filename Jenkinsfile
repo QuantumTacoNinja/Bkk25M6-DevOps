@@ -9,9 +9,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh """
-                    cd app
-                    go build -o appbin main.go
-                    ./main
+                    go build -o main /var/lib/jenkins/workspace/myapp-build-pipeline/app/main.go
+                    /var/lib/jenkins/workspace/myapp-build-pipeline/app/main
                 """
             }
         }
