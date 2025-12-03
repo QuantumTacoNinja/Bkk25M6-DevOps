@@ -10,7 +10,6 @@ pipeline {
             steps {
                 sh """
                     cd app
-                    go mod tidy
                     go build -o appbin main.go
                 """
             }
