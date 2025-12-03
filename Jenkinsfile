@@ -2,15 +2,17 @@ pipeline {
     agent any
 
     tools {
-       go "1.24.1"
+        go "1.24.1"
     }
 
     stages {
         stage('Build') {
             steps {
-                sh "cd app"
-                sh "go build main.go"
-                sh "./main"
+                sh """
+                    cd app
+                    go mod tidy
+                    go build -o appbin main.go
+                """
             }
         }
     }
