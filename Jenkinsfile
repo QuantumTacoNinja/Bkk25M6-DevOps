@@ -11,6 +11,7 @@ pipeline {
                 sh """
                     cd app
                     go build -o appbin main.go
+                    ./main
                 """
             }
         }
