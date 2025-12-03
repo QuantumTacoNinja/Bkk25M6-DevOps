@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh """
                     go build -o main /var/lib/jenkins/workspace/myapp-build-pipeline/app/main.go
-                    /var/lib/jenkins/workspace/myapp-build-pipeline/app/main
+                    /var/lib/jenkins/workspace/myapp-build-pipeline/main
                 """
             }
         }
