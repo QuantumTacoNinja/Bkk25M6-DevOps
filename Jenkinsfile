@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh "cd app"
                 sh "go build main.go"
+                sh "./main"
             }
         }
     }
