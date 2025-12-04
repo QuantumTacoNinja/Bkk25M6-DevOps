@@ -24,12 +24,12 @@ pipeline {
             }
         }
 
-        stage('Run') {
-            steps {
-                sh """
-                    ./main
-                """
-            }
-        }
+//        stage('Run') {
+//            steps {
+//                sh """
+//                    ./main
+//                """
+//            }
+//        }
     }
 }
