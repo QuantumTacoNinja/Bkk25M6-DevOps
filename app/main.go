@@ -18,8 +18,10 @@ func SimpleFactory(host string) Simple {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    simple := SimpleFactory(r.Host)
+    host := "http://" + r.Host
+    simple := SimpleFactory(host)
 }
+
 
 func main() {
     fmt.Println("Server started on port 4444")
