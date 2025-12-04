@@ -8,15 +8,19 @@ pipeline {
     stages {
         stage('Test') {
               steps {
-                   sh "go test ./..."
+		sh """
+		    root_path=$(pwd)
+		    go test "$root_path/app/"
+		"""
               }
           }
 
         stage('Build') {
             steps {
                 sh """
-                    go build -o main /var/lib/jenkins/workspace/myapp-build-pipeline/app/main.go
-                    /var/lib/jenkins/workspace/myapp-build-pipeline/main
+		    root_path=$(pwd)
+                    go build -o main "$root_path/app/main.go"
+		    "$root_path/app/main"
                 """
             }
         }
