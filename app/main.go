@@ -18,9 +18,11 @@ func SimpleFactory(host string) Simple {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    host := "http://" + r.Host
-    simple := SimpleFactory(host)
+    simple := SimpleFactory(r.Host)
+
+    json.NewEncoder(w).Encode(simple)
 }
+
 
 
 func main() {
