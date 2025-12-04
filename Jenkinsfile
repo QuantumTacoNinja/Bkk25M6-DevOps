@@ -24,12 +24,10 @@ pipeline {
             }
         }
 
-//        stage('Run') {
-//            steps {
-//                sh """
-//                    ./main
-//                """
-//            }
-//        }
+        stage('Deploy') {
+            steps {
+                sh 'scp main laborant@target:~'
+            }
+        }
     }
 }
